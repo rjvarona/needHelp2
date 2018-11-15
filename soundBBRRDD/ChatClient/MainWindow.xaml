@@ -1,0 +1,22 @@
+﻿<Window x:Class="ChatClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:ChatClient.ViewModels"
+        Title="Donald's Hair" Height="397.263" Width="557.128">
+    <Window.DataContext>
+        <my:ClientViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="227*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Message:" HorizontalAlignment="Left" Margin="10,0,0,57" Width="58" Height="26" VerticalAlignment="Bottom" Grid.ColumnSpan="3"/>
+        <TextBox Height="41" Margin="13,0,0,37" TextWrapping="Wrap" Text="{Binding Message}" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Left" Width="407"/>
+        <TextBox Margin="10,10,10,83" TextWrapping="Wrap" Text="{Binding MessageBoard}" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" TextChanged="TextBox_TextChanged"/>
+        <Button Content="Send" Command="{Binding SendCommand}" HorizontalAlignment="Left" Margin="10,0,0,37" VerticalAlignment="Bottom" Width="58" Height="22" Grid.ColumnSpan="3"/>
+        <Button Content="Connect" Command="{Binding ConnectCommand}" HorizontalAlignment="Left" Margin="10,0,0,12" VerticalAlignment="Bottom" Width="58" Height="20" Grid.ColumnSpan="3"/>
+        <Button Content="sounded" Command="{Binding tstSound}" HorizontalAlignment="Left" Margin="32,0,0,10" VerticalAlignment="Bottom" Width="58" Height="20" Grid.Column="2"/>
+    </Grid>
+</Window>
