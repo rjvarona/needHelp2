@@ -1,4 +1,4 @@
-﻿using ChatLibrary;
+﻿using ChatClient;
 using System;
 using System.Net.Sockets;
 using System.Threading;

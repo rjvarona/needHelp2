@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
-using ChatLibrary;
+using ChatClient;
 
 namespace ChatServer
 {

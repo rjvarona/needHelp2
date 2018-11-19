@@ -38,34 +38,34 @@ namespace ChatClient.ViewModels
                 switch (checker)
                 {
                     case " China":
-                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Documents\GitHub\needHelp2\soundBBRRDD\wavs\China.wav");
+                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Desktop\needHelp2-master\sundboArD\Wavs\China.wav");
                         _soundPlayer.Play();
                         return _clientModel.MessageBoard;
 
                     case " Wrong":
-                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Documents\GitHub\needHelp2\soundBBRRDD\wavs\Wrong.wav");
+                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Desktop\needHelp2-master\sundboArD\Wavs\Wrong.wav");
                         _soundPlayer.Play();
                         return _clientModel.MessageBoard;
                     case " GreatWall":
-                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Documents\GitHub\needHelp2\soundBBRRDD\wavs\GreatWall.wav");
+                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Desktop\needHelp2-master\sundboArD\Wavs\GreatWall.wav");
                         _soundPlayer.Play();
                         return _clientModel.MessageBoard;
                     case " ReallyRich":
-                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Documents\GitHub\needHelp2\soundBBRRDD\wavs\ReallyRich.wav");
+                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Desktop\needHelp2-master\sundboArD\Wavs\ReallyRich.wav");
                         _soundPlayer.Play();
                         return _clientModel.MessageBoard;
                     case " BingBong":
-                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Documents\GitHub\needHelp2\soundBBRRDD\wavs\BingBong.mp4");
+                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Desktop\needHelp2-master\sundboArD\Wavs\BingBong.mp4");
 
                         _soundPlayer.Play();
                         return _clientModel.MessageBoard;
                     case " FakeNews":
-                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Documents\chatdemo-master\Wavs\FakeNews.wav");
+                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Desktop\needHelp2-master\sundboArD\Wavs\FakeNews.wav");
 
                         _soundPlayer.Play();
                         return _clientModel.MessageBoard;
                     case " BuildWall":
-                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Documents\chatdemo-master\Wavs\WallRemix.wav");
+                        _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Desktop\needHelp2-master\sundboArD\Wavs\WallRemix.wav");
 
                         _soundPlayer.Play();
                         return _clientModel.MessageBoard;

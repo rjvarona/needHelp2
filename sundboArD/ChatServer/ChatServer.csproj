@@ -54,9 +54,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ChatLibrary\ChatLibrary.csproj">
-      <Project>{82bfd3bb-4d13-4925-b4b9-97a1a1892ea8}</Project>
-      <Name>ChatLibrary</Name>
+    <ProjectReference Include="..\ChatClient\ChatClient.csproj">
+      <Project>{fade4b45-0833-4e2d-a542-821b0eaba637}</Project>
+      <Name>ChatClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
