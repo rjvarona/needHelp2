@@ -3,6 +3,8 @@ using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Media;
+using System.Collections.Generic;
+
 
 
 namespace ChatLibrary
@@ -10,7 +12,7 @@ namespace ChatLibrary
     public class ClientModel : INotifyPropertyChanged
     {
        
-
+        public bool isConnected = false;
         private TcpClient _socket;
 
         private SoundPlayer _soundPlayer;
@@ -25,6 +27,7 @@ namespace ChatLibrary
         private string _currentMessage;
         public string CurrentMessage
         {
+       
             get { return _currentMessage; }
             set { _currentMessage = value; OnPropertyChanged(); }
         }
@@ -36,10 +39,22 @@ namespace ChatLibrary
 
         public void Connect()
         {
+            string player = "player";
             _socket = new TcpClient("127.0.0.1", 8888);
+            List<string> playerList = new List<string>();
+            //auto updating players
+
             OnPropertyChanged("Connected");
-            Send();
-            _messageBoard = "Welcome: " + _currentMessage;
+            
+
+
+            playerList.Add(player);
+            playerList[playerList.Count - 1] = playerList[playerList.Count - 1] + (playerList.Count - 1).ToString();
+            player = playerList[playerList.Count - 1];
+            //OnPropertyChanged("Connected");
+            Send(player);
+           
+            _messageBoard = "Welcome: " + player;
             var thread = new Thread(GetMessage);
             thread.Start();
         }
@@ -61,15 +76,15 @@ namespace ChatLibrary
 
         }
 
-        public void Send()
+        public void Send(string message)
         {
 
-            _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Desktop\wavs\Wrong.wav");
+            _soundPlayer = new SoundPlayer(@"C:\Users\rjvar\Documents\GitHub\needHelp2\soundBBRRDD\wavs\Wrong.wav");
 
             _soundPlayer.Play();
 
 
-            _socket.WriteString(_currentMessage);
+            _socket.WriteString(message);
         }
 
             #region INPC

@@ -58,7 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClientModel.cs" />
     <Compile Include="DelegateCommand.cs" />
+    <Compile Include="TcpClientExtension.cs" />
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +108,10 @@
     <ProjectReference Include="..\ChatLibrary\ChatLibrary.csproj">
       <Project>{82bfd3bb-4d13-4925-b4b9-97a1a1892ea8}</Project>
       <Name>ChatLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChatServer\ChatServer.csproj">
+      <Project>{39e72fff-73a4-44d5-ba9f-d986dbfabc0b}</Project>
+      <Name>ChatServer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

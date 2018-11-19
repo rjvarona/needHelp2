@@ -1,0 +1,23 @@
+﻿<Window x:Class="ChatClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:ChatClient.ViewModels"
+        Title="Chat Client" Height="370.925" Width="522.011">
+    <Window.DataContext>
+        <my:ClientViewModel />
+    </Window.DataContext>
+    <Grid>
+        <TextBox Height="28" Margin="435,0,0,12" TextWrapping="Wrap" Text="{Binding Message}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="60"/>
+        <TextBox Margin="10,10,0,204" TextWrapping="Wrap" Text="{Binding MessageBoard}" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="67"/>
+        <Button Content="Send" Command="{Binding SendCommand}" HorizontalAlignment="Right" Margin="0,0,437,163" VerticalAlignment="Bottom" Width="58" Height="22"/>
+        <Button Content="Connect" Command="{Binding ConnectCommand}" HorizontalAlignment="Right" Margin="0,0,223,292" VerticalAlignment="Bottom" Width="109" Height="32"/>
+        <Button x:Name="China2"  Command ="{Binding China2}" Content="China"    IsEnabled="False" HorizontalAlignment="Left" Margin="101,59,0,0" VerticalAlignment="Top" Width="58" Height="20" Click="China_Click" RenderTransformOrigin="2.121,0.483"/>
+        <Button x:Name="BingBong"  Command ="{Binding BIngBong}" Content="BingBong"    IsEnabled="False" HorizontalAlignment="Left" Margin="182,59,0,0" VerticalAlignment="Top" Width="58" Height="20" Click="China_Click" RenderTransformOrigin="2.121,0.483"/>
+        <Button x:Name="Wrong"  Command ="{Binding Wrong}" Content="Wrong"    IsEnabled="False" HorizontalAlignment="Left" Margin="276,59,0,0" VerticalAlignment="Top" Width="58" Height="20" Click="China_Click" RenderTransformOrigin="2.121,0.483"/>
+        <Button x:Name="GreatWall"  Command ="{Binding GreatWall}" Content="GreatWall"    IsEnabled="False" HorizontalAlignment="Left" Margin="370,59,0,0" VerticalAlignment="Top" Width="58" Height="20" Click="China_Click" RenderTransformOrigin="2.121,0.483"/>
+        <Button x:Name="ReallyRich"  Command ="{Binding ReallyRich}" Content="ReallyRich"    IsEnabled="False" HorizontalAlignment="Left" Margin="101,116,0,0" VerticalAlignment="Top" Width="58" Height="20" Click="China_Click" RenderTransformOrigin="2.121,0.483"/>
+        <Button x:Name="FakeNews"  Command ="{Binding FakeNews}" Content="FakeNews"    IsEnabled="False" HorizontalAlignment="Left" Margin="182,116,0,0" VerticalAlignment="Top" Width="58" Height="20" Click="China_Click" RenderTransformOrigin="2.121,0.483"/>
+        <Button x:Name="BuildWall"  Command ="{Binding BuildWall}" Content="We NeEd To BuIlD a wAlL"    IsEnabled="False" HorizontalAlignment="Left" Margin="101,168,0,0" VerticalAlignment="Top" Width="142" Height="64" Click="China_Click" RenderTransformOrigin="2.121,0.483"/>
+
+    </Grid>
+</Window>

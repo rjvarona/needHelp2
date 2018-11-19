@@ -1,6 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using ChatLibrary;
+
+using ChatServer;
+using System.Windows;
+using System.Linq;
+
 namespace ChatClient.ViewModels
 {
     
@@ -23,25 +27,31 @@ namespace ChatClient.ViewModels
 
         public string MessageBoard 
         {
-            get { return _clientModel.MessageBoard; }
+            get     { return _clientModel.MessageBoard; }
             set { _clientModel.MessageBoard = value; NotifyPropertyChanged(); }
         }       
     
         public DelegateCommand ConnectCommand { get; set; }
         public DelegateCommand SendCommand { get; set; }
-        public DelegateCommand tstSound { get; set; }
+        public DelegateCommand TstSound { get; set; }
         #endregion 
 
         #region Private and Internal Vars/Props
-        private readonly ClientModel _clientModel;
+        private readonly  ChatClient.ClientModel _clientModel;
+        private readonly HandleRequest _requestModel;
+
         #endregion 
          /// <summary>
         /// Constructor creates the Model!
         /// </summary>
         public ClientViewModel()
         {
+            //MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+            //mainWindow.TstSound.IsEnabled = true;
             //Create ourselves a model
             _clientModel = new ClientModel();
+
+            _requestModel = new HandleRequest();
             //Subscribe to the Model's PropertyChanged event
             _clientModel.PropertyChanged += ClientModelChanged;
             //Create our two Command objects
@@ -50,14 +60,18 @@ namespace ChatClient.ViewModels
                 b => !_clientModel.Connected
             );
 
-            tstSound = new DelegateCommand(
-                a => _clientModel.TSeries()
+            TstSound = new DelegateCommand(
+                a => _clientModel.Send(""),
+                b => _clientModel.Connected
                 );
 
             SendCommand = new DelegateCommand(
-                a => _clientModel.Send(),
+                a => _clientModel.Send("pressF"),
                 b => _clientModel.Connected
             );
+
+
+
         }
 
         #region Event Listeners

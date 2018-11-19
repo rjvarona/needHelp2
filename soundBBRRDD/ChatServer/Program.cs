@@ -10,31 +10,38 @@ namespace ChatServer
     {
         //This is a dictionary of key,value pairs used to store the names and sockets of each client.
         public static Dictionary<string, TcpClient> ClientList = new Dictionary<string, TcpClient>();
-
         /// <summary>
         /// Listens for new connections and handles them.
         /// </summary>
         static void Main()
         {
-            var serverSocket = new TcpListener(IPAddress.Any, 8888);
+            
+
+
+
+        var serverSocket = new TcpListener(IPAddress.Any, 8888);
             serverSocket.Start();
             Console.WriteLine("Chat server started...");
+            List<string> playerList = new List<string>();
+
             while (true)
             {
-                //This next line of code actually blocks
+                string player = "player";
+                
+                //auto updating players
+                playerList.Add(player);
+                playerList[playerList.Count - 1] = playerList[playerList.Count - 1] + (playerList.Count - 1).ToString();
+                player = playerList[playerList.Count - 1];
+                
                 var clientSocket = serverSocket.AcceptTcpClient();
-                //Somebody connected and sent us data... and no clientSocket doesn't have a method called ReadString: See TcpClientExtension.cs
-                string dataFromClient = clientSocket.ReadString();
-                //Add the name and StringSocket to the Dictionary object
-                ClientList.Add(dataFromClient, clientSocket);
-                //Tell everyone that someone new joined!
-                Broadcast(dataFromClient + " joined.", dataFromClient, false);
-                //Log the fact to the server console
-                Console.WriteLine(dataFromClient + " joined cat room.");
+               
+
+
+                Console.WriteLine(player + " joined cat room.");
                 //Create a new object to Handle all future incoming messages from this client
                 var client = new HandleClient();
                 //Start that thread running
-                client.StartClient(clientSocket, dataFromClient);
+                client.StartClient(clientSocket, player);
             }
         }
 

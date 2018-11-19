@@ -4,7 +4,7 @@
         xmlns:my="clr-namespace:ChatClient.ViewModels"
         Title="Donald's Hair" Height="397.263" Width="557.128">
     <Window.DataContext>
-        <my:ClientViewModel />
+        <my:ClientViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,9 +14,14 @@
         </Grid.ColumnDefinitions>
         <Label Content="Message:" HorizontalAlignment="Left" Margin="10,0,0,57" Width="58" Height="26" VerticalAlignment="Bottom" Grid.ColumnSpan="3"/>
         <TextBox Height="41" Margin="13,0,0,37" TextWrapping="Wrap" Text="{Binding Message}" VerticalAlignment="Bottom" Grid.Column="2" HorizontalAlignment="Left" Width="407"/>
-        <TextBox Margin="10,10,10,83" TextWrapping="Wrap" Text="{Binding MessageBoard}" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" TextChanged="TextBox_TextChanged"/>
-        <Button Content="Send" Command="{Binding SendCommand}" HorizontalAlignment="Left" Margin="10,0,0,37" VerticalAlignment="Bottom" Width="58" Height="22" Grid.ColumnSpan="3"/>
-        <Button Content="Connect" Command="{Binding ConnectCommand}" HorizontalAlignment="Left" Margin="10,0,0,12" VerticalAlignment="Bottom" Width="58" Height="20" Grid.ColumnSpan="3"/>
-        <Button Content="sounded" Command="{Binding tstSound}" HorizontalAlignment="Left" Margin="32,0,0,10" VerticalAlignment="Bottom" Width="58" Height="20" Grid.Column="2"/>
+        <TextBox Margin="10,10,0,302" TextWrapping="Wrap" Text="{Binding MessageBoard}" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Width="144"/>
+        <Button Content="Send" Command="{Binding SendCommand}" HorizontalAlignment="Left" Margin="118,0,0,232" VerticalAlignment="Bottom" Width="58" Height="22" Grid.Column="2"/>
+        <Button Content="Connect to Sboard" Command="{Binding ConnectCommand}" HorizontalAlignment="Right" Margin="0,0,225,315" VerticalAlignment="Bottom" Width="142" Height="32" Grid.Column="2"/>
+        <Button x:Name="TstSound" Content="Wrong" IsEnabled="False" HorizontalAlignment="Left" Margin="224,0,0,232" VerticalAlignment="Bottom" Width="58" Height="22" Grid.Column="2" Click="TstSound_Click_1"/>
+        <Button x:Name="BingBong" Content="BingBong" IsEnabled="False" HorizontalAlignment="Left" Margin="317,0,0,232" VerticalAlignment="Bottom" Width="58" Height="22" Grid.Column="2" Click="TstSound_Click_1"/>
+        <Button x:Name="China" Content="China" IsEnabled="False" HorizontalAlignment="Left" Margin="0,0,0,232" VerticalAlignment="Bottom" Width="58" Height="22" Grid.Column="2" Click="TstSound_Click_1"/>
+        <Button x:Name="FakeNews" Content="FakeNews" IsEnabled="False" HorizontalAlignment="Left" Margin="317,0,0,161" VerticalAlignment="Bottom" Width="58" Height="22" Grid.Column="2" Click="TstSound_Click_1"/>
+        <Button x:Name="ReallyRich" Content="ReallyRich" IsEnabled="False" HorizontalAlignment="Left" Margin="0,0,0,177" VerticalAlignment="Bottom" Width="58" Height="22" Grid.Column="2" Click="TstSound_Click_1"/>
+        <Button x:Name="GreatWall" Content="GreatWall" IsEnabled="False" HorizontalAlignment="Left" Margin="118,0,0,171" VerticalAlignment="Bottom" Width="58" Height="22" Grid.Column="2" Click="TstSound_Click_1"/>
     </Grid>
 </Window>
